@@ -1,0 +1,77 @@
+.carousel { position: relative; max-width: 1260px; margin-inline: auto; }
+.carousel-viewport { overflow: hidden; }
+.carousel-track { display: flex; transition: transform .45s var(--ease); will-change: transform; }
+.carousel-item { flex: 0 0 100%; min-width: 0; }
+
+.memory-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(370px, .9fr);
+  min-height: 620px;
+  background: #fff; color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, .26);
+  box-shadow: 18px 22px rgba(255, 198, 43, .88);
+}
+.memory-card > figure { position: relative; margin: 0; min-height: 620px; background: var(--navy-2); overflow: hidden; }
+.memory-card > figure::after {
+  content: ""; position: absolute; inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .18);
+  pointer-events: none;
+}
+.memory-card > figure img { width: 100%; height: 100%; min-height: 620px; object-fit: cover; object-position: center; }
+.memory-card > figure figcaption {
+  position: absolute; bottom: 22px; left: 22px;
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 13px; border-left: 4px solid var(--gold);
+  background: rgba(7, 21, 34, .86); color: #fff;
+  font-size: 12px; font-weight: 800;
+}
+.memory-copy { display: flex; flex-direction: column; padding: clamp(32px, 4.5vw, 62px); }
+.memory-number { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+.memory-number span { background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 900; letter-spacing: .13em; padding: 8px 11px; }
+.memory-number small { color: var(--muted); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.memory-copy h3 { color: var(--navy); font-size: clamp(38px, 4.6vw, 68px); line-height: 1; letter-spacing: -.045em; margin: 0 0 26px; }
+.memory-copy dl { display: grid; gap: 0; margin: 0 0 25px; }
+.memory-copy dl > div { display: grid; grid-template-columns: 125px minmax(0, 1fr); gap: 14px; padding: 12px 0; border-top: 1px solid #dce2e6; }
+.memory-copy dt {
+  display: flex; align-items: center; gap: 7px;
+  color: var(--muted); font-size: 12px; font-weight: 900;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+.memory-copy dd { color: var(--navy); font-size: 15px; font-weight: 700; line-height: 1.5; margin: 0; }
+.memory-note { margin-top: auto; padding: 18px 20px; border-left: 5px solid var(--blue); background: var(--soft); }
+.memory-note > span { display: block; color: var(--blue); font-size: 11px; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 7px; }
+.memory-note p { color: #4b5964; font-size: 15px; line-height: 1.65; margin: 0; }
+.memory-copy .link { color: var(--navy); width: fit-content; margin-top: 22px; }
+
+.carousel-controls { display: flex; align-items: center; gap: 9px; margin-top: 34px; justify-content: space-between; }
+.carousel-controls > div { display: flex; align-items: center; gap: 9px; }
+.carousel-controls button {
+  min-height: 44px; padding: 0 15px; color: #fff;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .35);
+  font-weight: 800; display: inline-flex; align-items: center; justify-content: center;
+  transition: all var(--dur) var(--ease);
+}
+.carousel-controls button:hover { color: var(--navy); background: var(--gold); border-color: var(--gold); }
+.carousel-controls [data-carousel-prev],
+.carousel-controls [data-carousel-next] { width: 44px; padding: 0; font-size: 18px; }
+.carousel-controls [data-carousel-counter] { color: var(--gold); font: 700 20px/1 var(--font-serif); letter-spacing: .08em; }
+.carousel-progress { height: 6px; background: rgba(255, 255, 255, .17); margin-top: 17px; }
+.carousel-progress > i {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--gold), #fff1aa);
+  transition: width .35s linear;
+}
+
+@media (max-width: 980px) {
+  .memory-card { grid-template-columns: 1fr; }
+  .memory-card > figure, .memory-card > figure img { aspect-ratio: 16/10; height: auto; min-height: 0; }
+}
+@media (max-width: 620px) {
+  .memory-card { box-shadow: 8px 10px rgba(255, 198, 43, .88); }
+  .memory-card > figure, .memory-card > figure img { aspect-ratio: 4/3; }
+  .memory-card > figure figcaption { bottom: 12px; left: 12px; }
+  .memory-copy { padding: 28px 22px; }
+  .memory-copy h3 { font-size: 38px; }
+  .memory-copy dl > div { grid-template-columns: 1fr; gap: 5px; }
+}

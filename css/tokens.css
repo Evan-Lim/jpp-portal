@@ -1,0 +1,49 @@
+:root {
+  --navy: #12263a;
+  --navy-2: #0d2032;
+  --navy-3: #071522;
+  --red: #e83a39;
+  --red-2: #c92b35;
+  --blue: #1765ad;
+  --blue-2: #153f67;
+  --gold: #ffc62b;
+  --gold-2: #a97308;
+  --teal: #14756e;
+  --purple: #694a87;
+  --maroon: #a6283b;
+
+  --paper: #fffdf8;
+  --cream: #f3f0e7;
+  --ink: #18222c;
+  --line: #d9d6cc;
+  --muted: #66727b;
+  --soft: #eef3f6;
+
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+  --r-xl: 22px;
+
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  --brand-row-h: 120px;
+  --nav-row-h: 56px;
+  --header-h: calc(var(--brand-row-h) + var(--nav-row-h));
+  --container: 1320px;
+  --gutter: 7vw;
+
+  --ease: cubic-bezier(.4, 0, .2, 1);
+  --dur: .2s;
+
+  --shadow-sm: 0 4px 12px rgba(18, 38, 58, .08);
+  --shadow-md: 0 14px 35px rgba(18, 38, 58, .14);
+  --shadow-lg: 0 20px 45px rgba(18, 38, 58, .18);
+}
+
+@media (max-width: 1100px) {
+  :root { --brand-row-h: 104px; --nav-row-h: 52px; }
+}
+@media (max-width: 620px) {
+  :root { --brand-row-h: 68px; --nav-row-h: 48px; --gutter: 18px; }
+}

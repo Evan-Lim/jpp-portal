@@ -1,0 +1,18 @@
+.badge {
+  display: inline-block; padding: 4px 8px;
+  font-size: 10px; font-weight: 900;
+  letter-spacing: .08em; text-transform: uppercase;
+  background: var(--soft); color: var(--navy);
+  border-radius: var(--r-sm);
+}
+.badge--gold { background: var(--gold); color: var(--navy); }
+.badge--red { background: var(--red); color: #fff; }
+.badge--navy { background: var(--navy); color: #fff; }
+.badge--outline { background: transparent; border: 1px solid var(--line); }
+
+.tag {
+  display: inline-block; padding: 4px 8px;
+  font-size: 10px; font-weight: 900;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--blue);
+}

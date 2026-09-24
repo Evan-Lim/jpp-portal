@@ -1,0 +1,59 @@
+.quick-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 18px; }
+.quick-card { grid-column: span 3; }
+.quick-card--featured {
+  grid-column: span 6; min-height: 370px; padding: 30px 30px 0;
+  background: linear-gradient(130deg, #fff 0 66%, var(--card-soft) 66%);
+}
+.quick-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
+.quick-card-top > strong { color: rgba(18, 38, 58, .17); font: 700 38px/1 var(--font-serif); letter-spacing: -.04em; }
+.quick-emblem {
+  display: grid; place-items: center;
+  width: 72px; height: 72px;
+  background: var(--card-soft);
+  border: 1px solid var(--card-accent);
+  box-shadow: 6px 6px rgba(18, 38, 58, .09);
+  transform: rotate(45deg);
+}
+.quick-emblem > svg {
+  width: 28px; height: 28px;
+  color: #fff; background: var(--card-accent);
+  border-radius: 50%; padding: 12px; box-sizing: content-box;
+  transform: rotate(-45deg);
+}
+.quick-card--featured .quick-emblem { width: 84px; height: 84px; }
+.quick-card--featured .quick-emblem > svg { width: 32px; height: 32px; padding: 14px; }
+.quick-copy { position: relative; margin-top: 28px; }
+.quick-card--featured .quick-copy { margin-top: 34px; max-width: 520px; }
+.quick-copy .kicker { color: var(--card-accent); margin-bottom: 10px; }
+.quick-copy .badge {
+  display: inline-block; color: #fff; background: var(--card-accent);
+  font-size: 9px; font-weight: 900; letter-spacing: .09em;
+  padding: 5px 8px; margin-left: 10px; vertical-align: 2px;
+}
+.quick-copy h3 { color: var(--navy); font-size: 29px; line-height: 1.08; margin: 9px 0 10px; }
+.quick-card--featured .quick-copy h3 { font-size: clamp(34px, 3.3vw, 48px); }
+.quick-copy p { color: #53616b; margin: 0 0 22px; line-height: 1.55; }
+.quick-action {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 14px; margin-top: auto; padding: 16px 0; min-height: 62px;
+  color: var(--card-dark);
+  border-top: 1px solid rgba(21, 63, 103, .18);
+}
+.quick-action b { font-size: 13px; }
+.quick-action span {
+  width: 34px; height: 34px;
+  background: var(--card-accent); color: #fff; border-radius: 50%;
+  display: grid; place-items: center; font-size: 19px;
+  transition: transform var(--dur) var(--ease); flex: none;
+}
+.quick-card:hover .quick-action span { transform: translateX(4px); }
+
+@media (max-width: 900px) {
+  .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quick-card, .quick-card--featured { grid-column: span 1; }
+}
+@media (max-width: 560px) {
+  .quick-grid { grid-template-columns: 1fr; }
+  .quick-card, .quick-card--featured { min-height: 0; padding: 24px 22px 0; }
+  .quick-card--featured .quick-copy h3 { font-size: 36px; }
+}

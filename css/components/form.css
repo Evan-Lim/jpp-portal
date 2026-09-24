@@ -1,0 +1,24 @@
+.form { display: grid; gap: 16px; }
+.form label {
+  display: grid; gap: 7px;
+  font-size: 11px; font-weight: 900;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--navy);
+}
+.form input, .form textarea, .form select {
+  width: 100%; padding: 12px 14px;
+  background: #fff; color: var(--ink);
+  border: 1px solid #aeb5b8; border-radius: var(--r-sm);
+  font-size: 16px; line-height: 1.5;
+}
+.form textarea { resize: vertical; min-height: 180px; }
+.form input:focus-visible, .form textarea:focus-visible, .form select:focus-visible {
+  outline: 3px solid rgba(23, 101, 173, .42);
+  border-color: var(--blue);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.form-message { color: var(--blue); font-weight: 900; }
+.form-message--error { color: var(--red); }
+.form-message--success { color: #14756e; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }

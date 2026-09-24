@@ -1,0 +1,74 @@
+.section { padding: 85px var(--gutter); }
+.section--cream { background: var(--cream); }
+.section--soft  { background: var(--soft); }
+
+.section--menu {
+  background: linear-gradient(165deg, var(--paper) 0 42%, var(--soft) 42% 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.section--detik {
+  background: linear-gradient(132deg, var(--navy-3) 0%, var(--navy) 58%, #204964 100%);
+  border-top: 8px solid var(--gold);
+  color: #fff;
+  padding: 100px 7vw 110px;
+  position: relative;
+  overflow: hidden;
+}
+.section--detik::before {
+  content: "DETIK";
+  position: absolute; top: 8px; right: -30px;
+  font: 900 clamp(110px, 19vw, 280px)/1 var(--font-serif);
+  color: rgba(255, 255, 255, .035);
+  pointer-events: none;
+}
+
+.section--org {
+  background: linear-gradient(180deg, var(--paper) 0%, #eaf0f4 100%);
+  border-top: 14px solid var(--navy);
+  padding: 90px 8vw 105px;
+}
+
+.section--page-hero {
+  background: var(--navy);
+  color: #fff;
+  padding: 70px var(--gutter) 75px;
+  position: relative;
+  overflow: hidden;
+}
+.section--page-hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  letter-spacing: -.05em;
+  margin: 8px 0 18px;
+  line-height: .98;
+}
+.section--page-hero p:last-child { color: #cedce5; max-width: 720px; }
+.section--page-hero .kicker { color: var(--gold); }
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 22px;
+  margin-bottom: 30px;
+}
+.section-head h2 {
+  font-size: clamp(35px, 4.2vw, 60px);
+  margin: 0;
+  line-height: 1;
+}
+.section-head p:last-child { color: var(--muted); }
+
+.section-head--light { border-color: rgba(255, 255, 255, .35); }
+.section-head--light h2 { color: #fff; }
+.section-head--light p { color: #d2dee7; }
+.section-head--light .kicker { color: var(--gold); }
+
+@media (max-width: 620px) {
+  .section { padding: 56px 18px; }
+  .section-head { display: grid; gap: 13px; }
+  .section-head h2 { font-size: clamp(33px, 10.5vw, 46px); }
+}

@@ -1,0 +1,62 @@
+.site-footer {
+  background: linear-gradient(135deg, #071725 0%, #0e2b42 70%, #123d55 100%);
+  border-top: 7px solid var(--gold);
+  color: #dce5eb;
+  padding: 0 var(--gutter);
+  position: relative;
+  overflow: hidden;
+}
+.site-footer::before {
+  content: "JPP";
+  position: absolute; bottom: -58px; right: 5vw;
+  font: 900 210px/1 var(--font-serif);
+  color: rgba(255, 255, 255, .03);
+  pointer-events: none;
+}
+.footer-main {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 1.35fr) minmax(170px, .7fr) minmax(190px, .75fr);
+  gap: clamp(38px, 6vw, 90px);
+  padding: 58px 0 46px;
+}
+.footer-brand { max-width: 480px; }
+.footer-identity { display: flex; align-items: center; gap: 17px; margin-bottom: 24px; }
+.footer-identity img { width: 64px; height: 50px; object-fit: contain; background: var(--navy); }
+.footer-identity b { display: block; color: #fff; font: 700 27px/1 var(--font-serif); }
+.footer-identity span {
+  display: block; color: var(--gold);
+  font-size: 11px; font-weight: 900;
+  letter-spacing: .1em; text-transform: uppercase; margin-top: 4px;
+}
+.footer-brand > p { color: #b9cbd7; margin: 0; font: 400 17px/1.7 var(--font-serif); }
+
+.footer-label {
+  color: var(--gold);
+  font-size: 10px; font-weight: 900;
+  letter-spacing: .15em; text-transform: uppercase;
+  margin: 0 0 7px;
+}
+.footer-links, .footer-contact { display: grid; gap: 13px; align-content: start; }
+.footer-links a, .footer-contact a {
+  color: #e7eef2; font-size: 14px; line-height: 1.4;
+  width: fit-content; border-bottom: 1px solid transparent;
+}
+.footer-links a:hover, .footer-contact a:hover { color: #fff; border-bottom-color: var(--gold); }
+
+.footer-bottom {
+  position: relative;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; padding: 19px 0 23px;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  font-size: 11px; color: #9fb4c2;
+}
+.footer-bottom span:nth-child(2) { color: #c7d4dc; }
+.footer-bottom a { color: var(--gold); font-weight: 800; }
+
+@media (max-width: 900px) { .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; } .footer-brand { grid-column: 1 / -1; } }
+@media (max-width: 560px) {
+  .footer-main { grid-template-columns: 1fr; gap: 32px; padding: 46px 0 36px; }
+  .footer-brand { grid-column: auto; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 9px; }
+}

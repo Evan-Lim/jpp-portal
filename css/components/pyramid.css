@@ -1,0 +1,58 @@
+.pyramid {
+  display: grid; justify-items: center; gap: 24px;
+  padding: 55px 4vw 65px;
+  background:
+    radial-gradient(circle at 50% 0, rgba(218, 177, 65, .24), transparent 36%),
+    linear-gradient(145deg, #f8fafb 0%, #fff 52%, #f4ead0 100%);
+  border-top: 7px solid var(--gold);
+  border-bottom: 1px solid #cfd7dc;
+  box-shadow: 0 18px 45px rgba(18, 38, 58, .12);
+}
+.pyramid-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; width: 100%; }
+.pyramid-line { background: var(--navy); width: 2px; height: 20px; margin: -20px 0; }
+.pyramid-line.lower { margin: -10px 0; }
+
+.pyramid-node {
+  --portrait-bg: var(--blue-2);
+  --portrait-soft: #eaf1f7;
+  display: grid; place-items: center; gap: 11px;
+  width: min(330px, 27vw); min-height: 465px;
+  padding: 25px; text-align: center;
+  background: linear-gradient(180deg, var(--portrait-soft) 0 61%, #fff 61%);
+  border: 1px solid var(--line);
+  border-top: 7px solid var(--portrait-bg);
+  box-shadow: 8px 10px #dbe0e2;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.pyramid-node:hover,
+.pyramid-node:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 11px 15px 0 var(--portrait-bg);
+  outline: none;
+}
+.pyramid-node small { color: var(--muted); font-size: 10px; font-weight: 900; letter-spacing: .14em; }
+.pyramid-node .photo {
+  width: 205px; height: 250px; padding: 7px;
+  background: var(--portrait-bg);
+  box-shadow: 0 12px 26px rgba(18, 38, 58, .2);
+}
+.pyramid-node .photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; border: 2px solid #fff; }
+.pyramid-node span {
+  color: var(--red); font-size: 10px; font-weight: 900;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.pyramid-node b { font-family: var(--font-serif); font-size: 20px; line-height: 1.18; max-width: 260px; }
+.pyramid-node em { color: var(--blue); font-size: 11px; font-weight: 900; font-style: normal; letter-spacing: .04em; }
+
+.pyramid-node.tone-0 { --portrait-bg: #153f67; --portrait-soft: #eaf1f7; }
+.pyramid-node.tone-1 { --portrait-bg: #8d2636; --portrait-soft: #f7ecee; }
+.pyramid-node.tone-2 { --portrait-bg: #a97b1e; --portrait-soft: #f8f0dd; }
+.pyramid-node.tone-3 { --portrait-bg: #27685f; --portrait-soft: #e8f2f0; }
+
+@media (max-width: 620px) {
+  .pyramid { gap: 16px; padding: 28px 14px 36px; }
+  .pyramid-line { height: 14px; margin: -15px 0; }
+  .pyramid-node { width: 100%; min-height: 0; padding: 20px 16px; box-shadow: 5px 6px #dbe0e2; }
+  .pyramid-node .photo { width: min(190px, 62vw); height: auto; aspect-ratio: 4/5; }
+  .pyramid-node b { font-size: 18px; }
+}
